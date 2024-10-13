@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="card-header border-0" id="headingNine">
                     <h5 class="accordion-faq m-0 position-relative">
                         <a class="custom-accordion-title text-reset d-block" data-bs-toggle="collapse"
-                            href="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                            href="#collapseNine" aria-expanded="true" aria-controls="collapseNine" onclick="test()">
                             Bagian 1 | STRUKTUR MOLEKUL AIR <i
                                 class="mdi mdi-chevron-down accordion-arrow"></i>
                         </a>
@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div id="collapseNine" class="collapse show" aria-labelledby="headingFour"
                     data-bs-parent="#custom-accordion-one">
                     <div class="card-body">
-                        <div class="overflow-auto" id="teks" style="height: 500px;">
+                        <div class="overflow-auto aktif" style="height: 500px;">
                             <h5>LEARNING OUTCOME</h5>
                             <p>Conceptual Understanding</p>
                             <ol>
@@ -158,7 +158,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?=base_url()?>assets/plugins/scrollbar/custom-scroll.js"></script>
 <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 <script type="text/javascript">
-    var teks = $("#teks").text();
+    var priceEls = document.getElementsByClassName("overflow-auto aktif");
+    for (var i = 0; i < priceEls.length; i++) {
+    var teks = priceEls[i].innerText;
+    
+    }
+    
     function play() {
         responsiveVoice.speak(
             teks,
@@ -180,5 +185,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     function resume() {
         responsiveVoice.resume();
+    }
+
+    var link = document.getElementsByClassName("custom-accordion-title text-reset collapsed d-block");
+
+    $(link).on("click", function() {
+        alert( "Handler for `click` called." );
+    } );
+
+    function test()
+    {
+        alert("HAI")
     }
 </script>
