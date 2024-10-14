@@ -242,26 +242,171 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><i class="fas fa-code"></i> <span>Multi Level</span> <span
+                    <a href="javascript:void(0);"><i class="fas fa-code"></i> <span>Daftar Isi</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
                         <li class="submenu">
-                            <a href="javascript:void(0);"> <span>Level 1</span> <span class="menu-arrow"></span></a>
+                            <a href="javascript:void(0);"> <span>BAB 1 STRUKTUR MOLEKUL AIR</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
-                                <li class="submenu">
-                                    <a href="javascript:void(0);"> <span> Level 2</span> <span
+                            <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Ikatan Antar Atom Penyusun Molekul Air</span> <span
                                             class="menu-arrow"></span></a>
                                     <ul>
-                                        <li><a href="javascript:void(0);">Level 3</a></li>
-                                        <li><a href="javascript:void(0);">Level 3</a></li>
+                                        <li><a href="javascript:void(0);">Prior Knowledge : Pengertian ikatan Kovalen</a></li>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Ikatan Kovalen Pada molekul air</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge : Kepolaran ikatan kovalen pada molekul air</a></li>
+                                        <li><a href="javascript:void(0);">Awe Expereince : Reaksi kimia untuk dapat menghasilkan air</a></li>
+                                        <li><a href="javascript:void(0);">Spiritual Kognition : Hikmah dibalik penciptaan air</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:void(0);"> <span>Level 2</span></a></li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Ikatan Antar Molekul Penyusun Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Prior Knowledge : Pengertian gaya ikat hidrogen</a></li>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Ikatan Hidrogen Antarmolekul air</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge : Titik Didih air</a></li>
+                                        <li><a href="javascript:void(0);">Awe Expereince : Sifat polar molekul air</a></li>
+                                        <li><a href="javascript:void(0);">Spiritual Kognition : Hikmah Sifat Kapilaritas air</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Air Sebagai Pelarut Universal</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Prior Knowledge : Pengertian larutan</a></li>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Cara air melarutkan zat lain</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: larutan homogen dan non homogen</a></li>
+                                        <li><a href="javascript:void(0);">Awe Expereince: Manfaat sifat pelarut air</a></li>
+                                        <li><a href="javascript:void(0);">Spiritual Kognition : Hikmah Sifat pelarut air dalam bersuci</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);"><span>Refleksi Kognitif</span></a></li>
+                                <li><a href="javascript:void(0);"><span>Refleksi Spiritual</span></a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="javascript:void(0);"> <span>Level 1</span></a>
+                        <!-- BAB 2 -->
+                        <li class="submenu">
+                            <a href="javascript:void(0);"> <span>BAB 2 PERUBAHAN WUJUD AIR</span> <span class="menu-arrow"></span></a>
+                            <ul>
+                            <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Wujud Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Prior Knowledge : Perbedaan zat padat, cair dan gas</a></li>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Karakter air dalam wujud padat cair & gas</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge : Pemanfaatan zat cair pada sistem hidrolik</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Perubahan Wujud Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Prior Knowledge : Perilaku atom ketika ditambahkan energi</a></li>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Pengaruh kalor terhadap perubahan wujud</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Pengaruh tekanan terhadap perubahan wujud</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Air Sebagai Pelarut Universal</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Prior Knowledge : Pengertian larutan</a></li>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Cara air melarutkan zat lain</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: larutan homogen dan non homogen</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Melebur dan Membeku</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Energi untuk melebur & membeku</a></li>
+                                        <li><a href="javascript:void(0);">Awe Expereince: Sifat anomali air</a></li>
+                                        <li><a href="javascript:void(0);">Spiritual Kognition : Hikmah massa jenis es > massa jenis air </a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Menguap dan Mengembun</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Energi untuk menguap & mengembun</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: pengembunan pada dinding botol dingin</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Menyublim dan Deposisi</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Energi untuk menyublim & deposisi</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: peyubliman pada kapur barus</a></li>
+                                        <li><a href="javascript:void(0);">Awe Expereince: Manfaat air salju dan embun </a></li>
+                                        <li><a href="javascript:void(0);">Spiritual Kognition : Hikmah hujan, salju dan es</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);"><span>Refleksi Kognitif</span></a></li>
+                                <li><a href="javascript:void(0);"><span>Refleksi Spiritual</span></a></li>
+                            </ul>
+                        </li>
+                        <!-- BAB 3 -->
+                        <li class="submenu">
+                            <a href="javascript:void(0);"> <span>BAB 3 SIKLUS AIR</span> <span class="menu-arrow"></span></a>
+                            <ul>
+                            <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Persebaran Air di Muka Bumi</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Prior Knowledge : Jumlah air di bumi</a></li>
+                                        <li><a href="javascript:void(0);">Combine Knowledge : Mekanisme Penyebaran air tawar di bumi</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Pengaruh pembendungan sungai</a></li>
+                                        <li><a href="javascript:void(0);">Awe Expereince: Manfaat gletser, air tanah, danau dan sungai</a></li>
+                                        <li><a href="javascript:void(0);">Spiritual Kognition : Hikmah gletser, air tanah, danau dan sungai</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Mekanisme Siklus Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Evaporasi</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Penguapan air di musim kemarau</a></li>
+                                        <li><a href="javascript:void(0);">Transpirasi</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Penguapan air di musim kemarau</a></li>
+                                        <li><a href="javascript:void(0);">Kondensasi</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Bagaimana awan dapat melayang di atmosfer</a></li>
+                                        <li><a href="javascript:void(0);">Konveksi dan Adveksi</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Terjadinya angin darat dan angin laut</a></li>
+                                        <li><a href="javascript:void(0);">Presipitasi</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Terjadinya hujan asam </a></li>
+                                        <li><a href="javascript:void(0);">Infiltrasi dan Surface Run Off</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: penyebab terjadinya kekeringan</a></li>
+                                        <li><a href="javascript:void(0);">Collection/Pengumpulan</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Pengaruh penyedotan air tanah berlebihan</a></li>
+                                        <li><a href="javascript:void(0);">Awe Expereince: Peran Troposfer dalam Siklus Air</a></li>
+                                        <li><a href="javascript:void(0);">Spiritual Kognition: Hikmah dibalik Anomali Suhu Troposfer</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Jenis-Jenis Siklus Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Siklus Pendek</a></li>
+                                        <li><a href="javascript:void(0);">Siklus Sedang</a></li>
+                                        <li><a href="javascript:void(0);">Siklus Panjang</a></li>
+                                        <li><a href="javascript:void(0);">Apply Knowledge: Hujan Es dan Hujan Beku</a></li>
+                                        <li><a href="javascript:void(0);">Awe Expereince: Peran Angin dalam Siklus Air</a></li>
+                                        <li><a href="javascript:void(0);">Spiritual Kognition: Hikmah dibalik Adanya Siklus Air</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);"><span>Refleksi Kognitif</span></a></li>
+                                <li><a href="javascript:void(0);"><span>Refleksi Spiritual</span></a></li>
+                            </ul>
+                        </li>
+
+                        
+
+
+
+
+
                         </li>
                     </ul>
                 </li>
