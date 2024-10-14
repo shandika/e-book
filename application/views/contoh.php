@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 <link rel="stylesheet" href="<?=base_url()?>assets/plugins/floating/style.css">
 
+
 <div class="page-header">
     <div class="row">
         <div class="col">
