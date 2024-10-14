@@ -195,6 +195,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     function test()
     {
-        alert("HAI")
+        alert("HAI Tes Branch")
     }
 </script>
