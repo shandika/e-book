@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
             <div class="loginbox">
                 <div class="login-left">
-                    <img class="img-fluid" src="<?=base_url()?>assets/img/login.png" alt="Logo">
+                    <img class="img-fluid" src="<?=base_url()?>assets/img/loginnew.png" alt="Logo">
                 </div>
                 <div class="login-right">
                     <div class="login-right-wrap">
