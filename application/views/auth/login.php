@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<link rel="stylesheet" href="<?=base_url()?>assets/plugins//toastr/toatr.css">
+<link rel="stylesheet" href="<?=base_url()?>assets/plugins/toastr/toatr.css">
 <div class="main-wrapper login-body">
     <div class="login-wrapper">
         <div class="container">

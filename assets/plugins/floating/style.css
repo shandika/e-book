@@ -81,3 +81,12 @@
   color: white;
   padding-top: 6px;
 }
+
+p {
+  text-align: justify;
+}
+
+.video1 {
+  width: 350px;
+  height: auto;
+}
