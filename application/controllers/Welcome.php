@@ -23,7 +23,7 @@ class Welcome extends CI_Controller {
 		$this->data['title'] 		= 'Dashboard';
 		$this->data['message'] 		= '';
         
-		$this->template->admin_render('dashboard', $this->data);
+		$this->template->admin_render('landing/index', $this->data);
 	}
 
 	public function contoh()

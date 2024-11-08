@@ -9,45 +9,195 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li class="menu-title">
                     <span>Main Menu</span>
                 </li>
+                <li>
+                    <a href="<?=base_url()?>"><i class="feather-grid"></i> <span> Sampul</span></a>
+                </li>
+                <?php if($this->ion_auth->is_admin()) {?>
+                <li>
+                    <a href="<?=base_url()?>controller_materi"><i class="fa fa-wrench"></i> <span> Controller Materi</span></a>
+                </li>
                 <li class="submenu">
-                    <a href="#"><i class="feather-grid"></i> <span> Dashboard</span> <span
+                    <a href="javascript:void(0);"><i class="fas fa-chalkboard-teacher"></i> <span> Soal</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
-                        <li><a href="index.html">Admin Dashboard</a></li>
-                        <li><a href="teacher-dashboard.html">Teacher Dashboard</a></li>
-                        <li><a href="student-dashboard.html">Student Dashboard</a></li>
+                        <li><a href="<?=base_url()?>previous_knowledge">Previous Knowledge</a></li>
+                        <li><a href="<?=base_url()?>latihan_soal">Latihan Soal</a></li>
+                        <li><a href="<?=base_url()?>">Grup</a></li>
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="#"><i class="fas fa-graduation-cap"></i> <span> Students</span> <span
+                    <a href="javascript:void(0);"><i class="fas fa-chalkboard-teacher"></i> <span> Akun</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
-                        <li><a href="students.html">Student List</a></li>
-                        <li><a href="student-details.html">Student View</a></li>
-                        <li><a href="add-student.html">Student Add</a></li>
-                        <li><a href="edit-student.html">Student Edit</a></li>
+                        <li><a href="<?=base_url()?>auth">List Akun</a></li>
+                        <li><a href="<?=base_url()?>auth/create_user">Tambah Akun</a></li>
+                        <li><a href="<?=base_url()?>auth/list_group">Grup</a></li>
+                        <li><a href="<?=base_url()?>auth/create_group">Tambah Grup</a></li>
                     </ul>
                 </li>
+                <?php } ?>
                 <li class="submenu">
-                    <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span
-                            class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);"><i class="fas fa-code"></i> <span>Daftar Isi</span> <span
+                            class="menu-arrow"></span></a> 
                     <ul>
-                        <li><a href="teachers.html">Teacher List</a></li>
-                        <li><a href="teacher-details.html">Teacher View</a></li>
-                        <li><a href="add-teacher.html">Teacher Add</a></li>
-                        <li><a href="edit-teacher.html">Teacher Edit</a></li>
+                        <li><a href="daftar-isi.html">DAFTAR ISI</a></li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);"> <span>BAB 1 STRUKTUR MOLEKUL AIR</span> <span class="menu-arrow"></span></a>
+                            <ul>
+                            <li class="submenu">
+                                    <a href="javascript:void(0);"> <span>Ikatan Antar Atom Penyusun Molekul Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-1-2">Prior Knowledge : Pengertian ikatan Kovalen</a></li>
+                                        <li><a href="#daftar-1-3">Combine Knowledge : Ikatan Kovalen Pada molekul air</a></li>
+                                        <li><a href="#daftar-1-4">Apply Knowledge : Kepolaran ikatan kovalen pada molekul air</a></li>
+                                        <li><a href="#daftar-1-5">Awe Expereince : Reaksi kimia untuk dapat menghasilkan air</a></li>
+                                        <li><a href="#daftar-1-6">Spiritual Kognition : Hikmah dibalik penciptaan air</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#daftar-1-7"> <span>Ikatan Antar Molekul Penyusun Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-1-8">Prior Knowledge : Pengertian gaya ikat hidrogen</a></li>
+                                        <li><a href="#daftar-1-9">Combine Knowledge : Ikatan Hidrogen Antarmolekul air</a></li>
+                                        <li><a href="#daftar-1-10">Apply Knowledge : Titik Didih air</a></li>
+                                        <li><a href="#daftar-1-11">Awe Expereince : Sifat polar molekul air</a></li>
+                                        <li><a href="#daftar-1-12">Spiritual Kognition : Hikmah Sifat Kapilaritas air</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#daftar-1-13"> <span>Air Sebagai Pelarut Universal</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-1-14">Prior Knowledge : Pengertian larutan</a></li>
+                                        <li><a href="#daftar-1-15">Combine Knowledge : Cara air melarutkan zat lain</a></li>
+                                        <li><a href="#daftar-1-16">Apply Knowledge: larutan homogen dan non homogen</a></li>
+                                        <li><a href="#daftar-1-17">Awe Expereince: Manfaat sifat pelarut air</a></li>
+                                        <li><a href="#daftar-1-18">Spiritual Kognition : Hikmah Sifat pelarut air dalam bersuci</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#daftar-1-19"><span>Refleksi Kognitif</span></a></li>
+                                <li><a href="#daftar-1-20"><span>Refleksi Spiritual</span></a></li>
+                            </ul>
+                        </li>
+                        <!-- BAB 2 -->
+                        <li class="submenu">
+                            <a href="javascript:void(0);"> <span>BAB 2 PERUBAHAN WUJUD AIR</span> <span class="menu-arrow"></span></a>
+                            <ul>
+                            <li class="submenu">
+                                    <a href="#daftar-2-1"> <span>Wujud Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-2-2">Prior Knowledge : Perbedaan zat padat, cair dan gas</a></li>
+                                        <li><a href="#daftar-2-3">Combine Knowledge : Karakter air dalam wujud padat cair & gas</a></li>
+                                        <li><a href="#daftar-2-4">Apply Knowledge : Pemanfaatan zat cair pada sistem hidrolik</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#daftar-2-5"> <span>Perubahan Wujud Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-2-6">Prior Knowledge : Perilaku atom ketika ditambahkan energi</a></li>
+                                        <li><a href="#daftar-2-7">Combine Knowledge : Pengaruh kalor terhadap perubahan wujud</a></li>
+                                        <li><a href="#daftar-2-8">Apply Knowledge: Pengaruh tekanan terhadap perubahan wujud</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#daftar-2-9"> <span>Melebur dan Membeku</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-2-10">Combine Knowledge : Energi untuk melebur & membeku</a></li>
+                                        <li><a href="#daftar-2-11">Awe Expereince: Sifat anomali air</a></li>
+                                        <li><a href="#daftar-2-12">Spiritual Kognition : Hikmah massa jenis es > massa jenis air </a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#daftar-2-13"> <span>Menguap dan Mengembun</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-2-14">Combine Knowledge : Energi untuk menguap & mengembun</a></li>
+                                        <li><a href="#daftar-2-15">Apply Knowledge: pengembunan pada dinding botol dingin</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#daftar-2-16"> <span>Menyublim dan Deposisi</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-2-17">Combine Knowledge : Energi untuk menyublim & deposisi</a></li>
+                                        <li><a href="#daftar-2-18">Apply Knowledge: peyubliman pada kapur barus</a></li>
+                                        <li><a href="#daftar-2-19">Awe Expereince: Manfaat air salju dan embun </a></li>
+                                        <li><a href="#daftar-2-20">Spiritual Kognition : Hikmah hujan, salju dan es</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#daftar-2-21"><span>Refleksi Kognitif</span></a></li>
+                                <li><a href="#daftar-2-22"><span>Refleksi Spiritual</span></a></li>
+                            </ul>
+                        </li>
+                        <!-- BAB 3 -->
+                        <li class="submenu">
+                            <a href="javascript:void(0);"> <span>BAB 3 SIKLUS AIR</span> <span class="menu-arrow"></span></a>
+                            <ul>
+                            <li class="submenu">
+                                    <a href="#daftar-3-1"> <span>Persebaran Air di Muka Bumi</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-3-2">Prior Knowledge : Jumlah air di bumi</a></li>
+                                        <li><a href="#daftar-3-3">Combine Knowledge : Mekanisme Penyebaran air tawar di bumi</a></li>
+                                        <li><a href="#daftar-3-4">Apply Knowledge: Pengaruh pembendungan sungai</a></li>
+                                        <li><a href="#daftar-3-5">Awe Expereince: Manfaat gletser, air tanah, danau dan sungai</a></li>
+                                        <li><a href="#daftar-3-6">Spiritual Kognition : Hikmah gletser, air tanah, danau dan sungai</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#daftar-3-7"> <span>Mekanisme Siklus Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-3-8">Evaporasi</a></li>
+                                        <li><a href="#daftar-3-9">Apply Knowledge: Penguapan air di musim kemarau</a></li>
+                                        <li><a href="#daftar-3-10">Transpirasi</a></li>
+                                        <li><a href="#daftar-3-11">Apply Knowledge: Penguapan air di musim kemarau</a></li>
+                                        <li><a href="#daftar-3-12">Kondensasi</a></li>
+                                        <li><a href="#daftar-3-13">Apply Knowledge: Bagaimana awan dapat melayang di atmosfer</a></li>
+                                        <li><a href="#daftar-3-14">Konveksi dan Adveksi</a></li>
+                                        <li><a href="#daftar-3-15">Apply Knowledge: Terjadinya angin darat dan angin laut</a></li>
+                                        <li><a href="#daftar-3-16">Presipitasi</a></li>
+                                        <li><a href="#daftar-3-17">Apply Knowledge: Terjadinya hujan asam </a></li>
+                                        <li><a href="#daftar-3-18">Infiltrasi dan Surface Run Off</a></li>
+                                        <li><a href="#daftar-3-19">Apply Knowledge: penyebab terjadinya kekeringan</a></li>
+                                        <li><a href="#daftar-3-20">Collection/Pengumpulan</a></li>
+                                        <li><a href="#daftar-3-21">Apply Knowledge: Pengaruh penyedotan air tanah berlebihan</a></li>
+                                        <li><a href="#daftar-3-22">Awe Expereince: Peran Troposfer dalam Siklus Air</a></li>
+                                        <li><a href="#daftar-3-23">Spiritual Kognition: Hikmah dibalik Anomali Suhu Troposfer</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="#daftar-3-24"> <span>Jenis-Jenis Siklus Air</span> <span
+                                            class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="#daftar-3-25">Siklus Pendek</a></li>
+                                        <li><a href="#daftar-3-26">Siklus Sedang</a></li>
+                                        <li><a href="#daftar-3-27">Siklus Panjang</a></li>
+                                        <li><a href="#daftar-3-28">Apply Knowledge: Hujan Es dan Hujan Beku</a></li>
+                                        <li><a href="#daftar-3-29">Awe Expereince: Peran Angin dalam Siklus Air</a></li>
+                                        <li><a href="#daftar-3-30">Spiritual Kognition: Hikmah dibalik Adanya Siklus Air</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#daftar-3-31"><span>Refleksi Kognitif</span></a></li>
+                                <li><a href="#daftar-3-32"><span>Refleksi Spiritual</span></a></li>
+                            </ul>
+                        </li>
+
+                        
+
+
+
+
+
+                        </li>
                     </ul>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="fas fa-building"></i> <span> Departments</span> <span
-                            class="menu-arrow"></span></a>
-                    <ul>
-                        <li><a href="departments.html">Department List</a></li>
-                        <li><a href="add-department.html">Department Add</a></li>
-                        <li><a href="edit-department.html">Department Edit</a></li>
-                    </ul>
-                </li>
-                <li class="submenu">
+                <!-- <li class="submenu">
                     <a href="#"><i class="fas fa-book-reader"></i> <span> Subjects</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
@@ -141,11 +291,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </li>
                 <li>
                     <a href="transport.html"><i class="fas fa-bus"></i> <span>Transport</span></a>
-                </li>
-                <li class="menu-title">
+                </li> -->
+                <!-- <li class="menu-title">
                     <span>UI Interface</span>
-                </li>
-                <li class="submenu">
+                </li> -->
+                <!-- <li class="submenu">
                     <a href="#"><i class="fab fa-get-pocket"></i> <span>Base UI </span> <span
                             class="menu-arrow"></span></a>
                     <ul>
@@ -178,8 +328,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a href="typography.html">Typography</a></li>
                         <li><a href="video.html">Video</a></li>
                     </ul>
-                </li>
-                <li class="submenu">
+                </li> -->
+                <!-- <li class="submenu">
                     <a href="#"><i data-feather="box"></i> <span>Elements </span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="ribbon.html">Ribbon</a></li>
@@ -195,8 +345,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a href="horizontal-timeline.html">Horizontal Timeline</a></li>
                         <li><a href="form-wizard.html">Form Wizard</a></li>
                     </ul>
-                </li>
-                <li class="submenu">
+                </li> -->
+                <!-- <li class="submenu">
                     <a href="#"><i data-feather="bar-chart-2"></i> <span> Charts </span> <span
                             class="menu-arrow"></span></a>
                     <ul>
@@ -207,8 +357,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a href="chart-peity.html">Peity Charts</a></li>
                         <li><a href="chart-c3.html">C3 Charts</a></li>
                     </ul>
-                </li>
-                <li class="submenu">
+                </li> -->
+                <!-- <li class="submenu">
                     <a href="#"><i data-feather="award"></i> <span> Icons </span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="icon-fontawesome.html">Fontawesome Icons</a></li>
@@ -222,8 +372,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a href="icon-typicon.html">Typicon Icons</a></li>
                         <li><a href="icon-flag.html">Flag Icons</a></li>
                     </ul>
-                </li>
-                <li class="submenu">
+                </li> -->
+                <!-- <li class="submenu">
                     <a href="#"><i class="fas fa-columns"></i> <span> Forms </span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="form-basic-inputs.html">Basic Inputs </a></li>
@@ -233,15 +383,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a href="form-mask.html"> Form Mask </a></li>
                         <li><a href="form-validation.html"> Form Validation </a></li>
                     </ul>
-                </li>
-                <li class="submenu">
+                </li> -->
+                <!-- <li class="submenu">
                     <a href="#"><i class="fas fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="tables-basic.html">Basic Tables </a></li>
                         <li><a href="data-tables.html">Data Table </a></li>
                     </ul>
-                </li>
-                <li class="submenu">
+                </li> -->
+                <!-- <li class="submenu">
                     <a href="javascript:void(0);"><i class="fas fa-code"></i> <span>Daftar Isi</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
@@ -284,9 +434,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <li><a href="javascript:void(0);"><span>Refleksi Kognitif</span></a></li>
                                 <li><a href="javascript:void(0);"><span>Refleksi Spiritual</span></a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- BAB 2 -->
-                        <li class="submenu">
+                        <!-- <li class="submenu">
                             <a href="javascript:void(0);"> <span>BAB 2 PERUBAHAN WUJUD AIR</span> <span class="menu-arrow"></span></a>
                             <ul>
                             <li class="submenu">
@@ -346,9 +496,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <li><a href="javascript:void(0);"><span>Refleksi Kognitif</span></a></li>
                                 <li><a href="javascript:void(0);"><span>Refleksi Spiritual</span></a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- BAB 3 -->
-                        <li class="submenu">
+                        <!-- <li class="submenu">
                             <a href="javascript:void(0);"> <span>BAB 3 SIKLUS AIR</span> <span class="menu-arrow"></span></a>
                             <ul>
                             <li class="submenu">
@@ -408,7 +558,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
             </ul>
         </div>

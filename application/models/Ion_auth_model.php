@@ -197,6 +197,14 @@ class Ion_auth_model extends CI_Model
 	 */
 	protected $db;
 
+	var $column_order = array(null,'first_name','last_name','email',null,null); //set column field database for datatable orderable
+	var $column_search = array('first_name','last_name','email','username'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+	var $order = array('first_name' => 'asc'); // default order 
+
+	var $column_order_group = array(null,'name','description',null); //set column field database for datatable orderable
+	var $column_search_group = array('name','description'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+	var $order_group = array('name' => 'asc'); // default order 
+
 	public function __construct()
 	{
 		$this->config->load('ion_auth', TRUE);
@@ -263,6 +271,104 @@ class Ion_auth_model extends CI_Model
 		$this->_ion_hooks = new stdClass;
 
 		$this->trigger_events('model_constructor');
+	}
+
+	// user list
+	private function _get_datatables_query()
+	{
+		
+		$this->db->from('users');
+
+		$i = 0;
+	
+		foreach ($this->column_search as $item) // loop column 
+		{
+			if($_POST['search']['value']) // if datatable send POST for search
+			{
+				
+				if($i===0) // first loop
+				{
+					$this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+					$this->db->like($item, $_POST['search']['value']);
+				}
+				else
+				{
+					$this->db->or_like($item, $_POST['search']['value']);
+				}
+
+				if(count($this->column_search) - 1 == $i) //last loop
+					$this->db->group_end(); //close bracket
+			}
+			$i++;
+		}
+		
+		if(isset($_POST['order'])) // here order processing
+		{
+			$this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+		} 
+		else if(isset($this->order))
+		{
+			$order = $this->order;
+			$this->db->order_by(key($order), $order[key($order)]);
+		}
+	}
+
+	function get_datatables()
+	{
+		$this->_get_datatables_query();
+		if($_POST['length'] != -1)
+		$this->db->limit($_POST['length'], $_POST['start']);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function count_filtered()
+	{
+		$this->_get_datatables_query();
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+
+	public function count_all()
+	{
+		$this->db->from('users');
+		return $this->db->count_all_results();
+	}
+	
+	public function get_all()
+	{
+		$this->db->from('users');
+		$query = $this->db->get();
+
+		return $query->result();
+	}
+	
+	public function search($value)
+	{
+		$this->db->from('users');
+		$i = 0;
+		foreach ($this->column_search as $item) // loop column 
+		{
+			if($value) // if datatable send POST for search
+			{
+				if($i===0) // first loop
+				{
+					$this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+					$this->db->like($item, $value);
+				}
+				else
+				{
+					$this->db->or_like($item, $value);
+				}
+
+				if(count($this->column_search) - 1 == $i) //last loop
+					$this->db->group_end(); //close bracket
+			}
+			$i++;
+		}
+		$query = $this->db->get();
+
+		return $query->result();
 	}
 
 	/**

@@ -1,57 +1,110 @@
-<h1><?php echo lang('create_user_heading');?></h1>
-<p><?php echo lang('create_user_subheading');?></p>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 
-<div id="infoMessage"><?php echo $message;?></div>
+<div class="page-header">
+    <div class="row align-items-center">
+        <div class="col">
+            <h3 class="page-title"><?php echo lang('create_user_heading');?></h3>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?=base_url('auth')?>"><?php echo lang('index_heading');?></a></li>
+                <li class="breadcrumb-item active"><?php echo lang('create_user_heading');?></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-<?php echo form_open("auth/create_user");?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card card-table">
+            <div class="card-body">
 
-      <p>
-            <?php echo lang('create_user_fname_label', 'first_name');?> <br />
-            <?php echo form_input($first_name);?>
-      </p>
+                <div class="page-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="page-title"><?php echo lang('create_user_heading');?></h3>
+                        </div>
+                    </div>
+                </div>
 
-      <p>
-            <?php echo lang('create_user_lname_label', 'last_name');?> <br />
-            <?php echo form_input($last_name);?>
-      </p>
-      
-      <?php
-      if($identity_column!=='email') {
-          echo '<p>';
-          echo lang('create_user_identity_label', 'identity');
-          echo '<br />';
-          echo form_error('identity');
-          echo form_input($identity);
-          echo '</p>';
-      }
-      ?>
-
-      <p>
-            <?php echo lang('create_user_company_label', 'company');?> <br />
-            <?php echo form_input($company);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_email_label', 'email');?> <br />
-            <?php echo form_input($email);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_phone_label', 'phone');?> <br />
-            <?php echo form_input($phone);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_password_label', 'password');?> <br />
-            <?php echo form_input($password);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_password_confirm_label', 'password_confirm');?> <br />
-            <?php echo form_input($password_confirm);?>
-      </p>
-
-
-      <p><?php echo form_submit('submit', lang('create_user_submit_btn'));?></p>
-
-<?php echo form_close();?>
+                <?php echo form_open("auth/create_user");?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label><?php echo lang('create_user_fname_label', 'first_name');?></label>
+                                <?php echo form_input($first_name);?>
+                                <div class="invalid-feedback d-block" role="alert">
+                                    <?php echo form_error('first_name'); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><?php echo lang('create_user_lname_label', 'last_name');?></label>
+                                <?php echo form_input($last_name);?>
+                                <div class="invalid-feedback d-block" role="alert">
+                                    <?php echo form_error('last_name'); ?>
+                                </div>
+                            </div>
+                            <?php
+                            if($identity_column!=='email') {
+                            echo '<div class="form-group">';
+                                echo '<label>';
+                                echo lang('create_user_identity_label', 'identity');
+                                echo '</label>';
+                                echo form_input($identity);
+                            echo '</div>';
+                            }
+                            ?>
+                            <div class="form-group">
+                                <label><?php echo lang('create_user_company_label', 'company');?></label>
+                                <?php echo form_input($company);?>
+                                <div class="invalid-feedback d-block" role="alert">
+                                    <?php echo form_error('company'); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><?php echo lang('create_user_email_label', 'email');?></label>
+                                <?php echo form_input($email);?>
+                                <div class="invalid-feedback d-block" role="alert">
+                                    <?php echo form_error('email'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label><?php echo lang('create_user_phone_label', 'phone');?></label>
+                                <?php echo form_input($phone);?>
+                                <div class="invalid-feedback d-block" role="alert">
+                                    <?php echo form_error('phone'); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><?php echo lang('create_user_password_label', 'password');?></label>
+                                <?php echo form_input($password);?>
+                                <div class="invalid-feedback d-block" role="alert">
+                                    <?php echo form_error('password'); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><?php echo lang('create_user_password_confirm_label', 'password_confirm');?></label>
+                                <?php echo form_input($password_confirm);?>
+                                <div class="invalid-feedback d-block" role="alert">
+                                    <?php echo form_error('password_confirm'); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <?php echo form_submit(array(
+							'type' => 'submit',
+							'name' => 'submit',
+							'value' => 'Simpan Pengguna',
+							'class' => 'btn btn-primary',
+						));
+						?>
+                    </div>
+                <?php echo form_close();?>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="<?=base_url()?>assets/js/jquery-3.6.0.min.js"></script>

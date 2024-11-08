@@ -14,6 +14,7 @@ class Auth extends CI_Controller
 		parent::__construct();
 		$this->load->database();
 		$this->load->library(['ion_auth', 'form_validation']);
+		$this->load->model('Ion_auth_model','hasil');
 		$this->load->helper(['url', 'language']);
 
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
@@ -55,7 +56,52 @@ class Auth extends CI_Controller
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 
-			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'index', $this->data);
+			// $this->_render_page('auth' . DIRECTORY_SEPARATOR . 'index', $this->data);
+			$this->template->admin_render('auth/index', $this->data);
+		}
+	}
+
+	public function ajax_list(){
+		if ( ! $this->ion_auth->logged_in() )
+        {
+            redirect('auth/login', 'refresh');
+        }
+        else
+        {
+			$list = $this->hasil->get_datatables();
+			$data = array();
+			$no = $_POST['start'];
+			foreach ($list as $hasil) {
+				$no++;
+				$row = array();
+				$row[] = $no;
+				$row[] = $hasil->first_name;
+				$row[] = $hasil->last_name;
+				$row[] = $hasil->email;
+				$aktif = "";
+				if ($hasil->active == 1) {
+					$aktif = '<a href="'.base_url("auth/deactivate/$hasil->id").'" title="Nonaktifkan">Aktif</a>';
+				} else {
+					$aktif = '<a href="'.base_url("auth/activate/$hasil->id").'" title="Aktifkan">Inaktif</a>';
+				}
+				
+                $edit = "";
+                $edit = '<a class="btn btn-sm icon icon-left btn-warning" href="'.base_url("auth/edit_user/$hasil->id").'" title="Edit"><i class="fas fa-edit"></i> Edit</a>';
+                
+				$status = $aktif;
+				$row[] = $status;
+				$tindakan = $edit;
+				$row[] = $tindakan;
+				$data[] = $row;
+			}
+			$output = array(
+							"draw" => $_POST['draw'],
+							"recordsTotal" => $this->hasil->count_all(),
+							"recordsFiltered" => $this->hasil->count_filtered(),
+							"data" => $data,
+					);
+			//output to json format
+			echo json_encode($output);
 		}
 	}
 
@@ -81,7 +127,7 @@ class Auth extends CI_Controller
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/auth', 'refresh');
+				redirect('/sampul', 'refresh');
 			}
 			else
 			{
@@ -398,7 +444,7 @@ class Auth extends CI_Controller
 		{
 			// redirect them to the auth page
 			$this->session->set_flashdata('message', $this->ion_auth->messages());
-			redirect("auth", 'refresh');
+			redirect("auth/list_user", 'refresh');
 		}
 		else
 		{
@@ -434,7 +480,7 @@ class Auth extends CI_Controller
 			$this->data['user'] = $this->ion_auth->user($id)->row();
 			$this->data['identity'] = $this->config->item('identity', 'ion_auth');
 
-			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'deactivate_user', $this->data);
+			$this->template->admin_render('auth/deactivate_user', $this->data);
 		}
 		else
 		{
@@ -455,7 +501,7 @@ class Auth extends CI_Controller
 			}
 
 			// redirect them back to the auth page
-			redirect('auth', 'refresh');
+			redirect('auth/list_user', 'refresh');
 		}
 	}
 
@@ -522,52 +568,61 @@ class Auth extends CI_Controller
 				'name' => 'first_name',
 				'id' => 'first_name',
 				'type' => 'text',
+				'class'	=> 'form-control',
 				'value' => $this->form_validation->set_value('first_name'),
 			];
 			$this->data['last_name'] = [
 				'name' => 'last_name',
 				'id' => 'last_name',
 				'type' => 'text',
+				'class'	=> 'form-control',
 				'value' => $this->form_validation->set_value('last_name'),
 			];
 			$this->data['identity'] = [
 				'name' => 'identity',
 				'id' => 'identity',
 				'type' => 'text',
+				'class'	=> 'form-control',
 				'value' => $this->form_validation->set_value('identity'),
 			];
 			$this->data['email'] = [
 				'name' => 'email',
 				'id' => 'email',
 				'type' => 'text',
+				'class'	=> 'form-control',
 				'value' => $this->form_validation->set_value('email'),
 			];
 			$this->data['company'] = [
 				'name' => 'company',
 				'id' => 'company',
 				'type' => 'text',
+				'class'	=> 'form-control',
 				'value' => $this->form_validation->set_value('company'),
 			];
 			$this->data['phone'] = [
 				'name' => 'phone',
 				'id' => 'phone',
 				'type' => 'text',
+				'class'	=> 'form-control',
 				'value' => $this->form_validation->set_value('phone'),
 			];
 			$this->data['password'] = [
 				'name' => 'password',
 				'id' => 'password',
 				'type' => 'password',
+				'class'	=> 'form-control',
 				'value' => $this->form_validation->set_value('password'),
 			];
 			$this->data['password_confirm'] = [
 				'name' => 'password_confirm',
 				'id' => 'password_confirm',
 				'type' => 'password',
+				'class'	=> 'form-control',
 				'value' => $this->form_validation->set_value('password_confirm'),
 			];
 
-			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
+			// $this->_render_page('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
+			$this->template->admin_render('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
 		}
 	}
 	/**
@@ -689,38 +744,45 @@ class Auth extends CI_Controller
 			'name'  => 'first_name',
 			'id'    => 'first_name',
 			'type'  => 'text',
+			'class'	=> 'form-control',
 			'value' => $this->form_validation->set_value('first_name', $user->first_name),
 		];
 		$this->data['last_name'] = [
 			'name'  => 'last_name',
 			'id'    => 'last_name',
 			'type'  => 'text',
+			'class'	=> 'form-control',
 			'value' => $this->form_validation->set_value('last_name', $user->last_name),
 		];
 		$this->data['company'] = [
 			'name'  => 'company',
 			'id'    => 'company',
 			'type'  => 'text',
+			'class'	=> 'form-control',
 			'value' => $this->form_validation->set_value('company', $user->company),
 		];
 		$this->data['phone'] = [
 			'name'  => 'phone',
 			'id'    => 'phone',
 			'type'  => 'text',
+			'class'	=> 'form-control',
 			'value' => $this->form_validation->set_value('phone', $user->phone),
 		];
 		$this->data['password'] = [
 			'name' => 'password',
 			'id'   => 'password',
+			'class'	=> 'form-control',
 			'type' => 'password'
 		];
 		$this->data['password_confirm'] = [
 			'name' => 'password_confirm',
 			'id'   => 'password_confirm',
+			'class'	=> 'form-control',
 			'type' => 'password'
 		];
 
-		$this->_render_page('auth/edit_user', $this->data);
+		// $this->_render_page('auth/edit_user', $this->data);
+		$this->template->admin_render('auth/edit_user', $this->data);
 	}
 
 	/**
